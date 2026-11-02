@@ -173,6 +173,14 @@ button {
   color: var(--green);
   font-weight: bold;
 }
+.count {
+  margin-left: auto;
+  background: var(--gold-soft);
+  border-radius: 999px;
+  padding: 0 8px;
+  font-size: 14px;
+}
+
 .points-card {
   margin-top: auto;
   padding: 16px;
@@ -212,7 +220,7 @@ button {
 }
 
 /* ---------- Cards and panels ---------- */
-.panel, .card, .stat-card {
+.panel, .card, .stat-card, .banner {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: 14px;
@@ -224,6 +232,13 @@ button {
 .note {
   color: var(--muted);
   font-size: 14px;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--green-soft);
 }
 
 .stat-card {
@@ -244,6 +259,10 @@ button {
   font-size: 26px;
 }
 
+.big {
+  display: block;
+  font-size: 30px;
+}
 .center {
   text-align: center;
 }
@@ -407,6 +426,17 @@ blockquote {
 }
 
 /* ---------- Progress and charts ---------- */
+.progress-track {
+  height: 12px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--green);
+}
+
 .week-chart, .bar-chart {
   display: flex;
   align-items: flex-end;

@@ -7,7 +7,11 @@ import { engagementByMonth } from "../data.js";
 function downloadReport(period) {
   const rows = [
     ["Metric", "Value", "Period"],
+    ["Challenge participation", "74%", period],
+    ["Learning modules completed", "128", period],
     ["Productivity goal milestones", "56", period],
+    ["Wellness activities logged", "96", period],
+    ["Rewards redeemed", "42", period],
     ["Feedback pulse", "82% positive", period],
   ];
   const csv = rows.map(row => row.join(",")).join("\n");
@@ -28,8 +32,9 @@ function Insights() {
         Sample dashboard — these numbers are fictional examples, not live employee data or real predictions.
       </p>
 
-      <div className="grid-2">
+      <div className="grid-3">
         <StatCard icon="📈" title="Engagement pulse" value="82%" detail="+6 points from last month" />
+        <StatCard icon="📖" title="Learning activity" value="74%" detail="Taking part this month" />
         <StatCard icon="🤝" title="Team connection" value="88%" detail="Sample survey response" />
       </div>
 

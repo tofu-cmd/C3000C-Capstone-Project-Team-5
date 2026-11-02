@@ -1,6 +1,6 @@
-import { pages } from "../data.js";
+import { pages, challenges } from "../data.js";
 
-function Sidebar({ page, setPage, points, theme, toggleTheme }) {
+function Sidebar({ page, setPage, points, doneChallenges, theme, toggleTheme }) {
   return (
     <aside className="sidebar">
       <div className="brand">
@@ -17,6 +17,9 @@ function Sidebar({ page, setPage, points, theme, toggleTheme }) {
           >
             <span>{item.icon}</span>
             {item.label}
+            {item.id === "challenges" && (
+              <span className="count">{challenges.length - doneChallenges}</span>
+            )}
           </button>
         ))}
       </nav>
@@ -24,6 +27,7 @@ function Sidebar({ page, setPage, points, theme, toggleTheme }) {
       <div className="points-card">
         <small>YOUR POINTS</small>
         <strong>{points.toLocaleString()}</strong>
+        <button onClick={() => setPage("recognition")}>See rewards →</button>
       </div>
 
       <button className="theme-button" onClick={toggleTheme}>

@@ -2,6 +2,10 @@
 
 export const pages = [
   { id: "overview", icon: "🏠", label: "Overview" },
+  { id: "challenges", icon: "🎯", label: "Challenges" },
+  { id: "recognition", icon: "🏅", label: "Recognition & rewards" },
+  { id: "learning", icon: "📖", label: "Learning" },
+  { id: "wellness", icon: "💚", label: "Wellness" },
   { id: "feed", icon: "💬", label: "Team feed" },
   { id: "hr", icon: "💼", label: "HR self-service" },
   { id: "insights", icon: "📊", label: "Insights" },
@@ -11,6 +15,22 @@ export const headings = {
   overview: {
     title: "A little progress, every day",
     subtitle: "Good morning, Maya. Here's your week at a glance.",
+  },
+  challenges: {
+    title: "Find your next small win",
+    subtitle: "Challenges are invitations, not obligations.",
+  },
+  recognition: {
+    title: "Celebrate the good stuff",
+    subtitle: "Notice it. Say it. Help it grow.",
+  },
+  learning: {
+    title: "Keep growing your skills",
+    subtitle: "A few minutes of curiosity can take you a long way.",
+  },
+  wellness: {
+    title: "Make room for wellbeing",
+    subtitle: "Find a rhythm that feels right for you.",
   },
   feed: {
     title: "Good things happen together",
@@ -33,6 +53,40 @@ export const people = [
   { name: "Nina Patel", team: "People", points: 1280 },
   { name: "Jordan Lee", team: "People", points: 1180 },
   { name: "Priya Shah", team: "Product", points: 1120 },
+];
+
+export const challenges = [
+  { id: "learn", icon: "📖", title: "Finish a learning module", detail: "Pick up one new idea in 15 minutes.", points: 40, type: "Learning" },
+  { id: "feedback", icon: "💬", title: "Share one piece of feedback", detail: "Help shape the next team update.", points: 25, type: "Culture" },
+  { id: "mindful", icon: "🧘", title: "Take a mindful moment", detail: "Pause for a short reset today.", points: 20, type: "Wellness" },
+  { id: "steps", icon: "👟", title: "Take a fresh-air walk", detail: "Log a walk or a step-count goal.", points: 30, type: "Wellness" },
+  { id: "goal", icon: "🎯", title: "Log a goal milestone", detail: "Celebrate a goal you made progress on.", points: 35, type: "Performance" },
+];
+
+export const courses = [
+  { id: "inclusive", title: "Inclusive teams, everyday", detail: "Level 2 · 12 min", points: 40, badge: "Inclusive Teammate" },
+  { id: "feedback-skills", title: "Feedback that helps us grow", detail: "Level 1 · 8 min", points: 30, badge: "Clear Communicator" },
+  { id: "privacy", title: "Everyday data care", detail: "Level 3 · 15 min", points: 50, badge: "Data-aware" },
+];
+
+export const rewards = [
+  { id: "coffee", icon: "☕", title: "Coffee on us", detail: "A little treat for your next break.", points: 350 },
+  { id: "gift-card", icon: "🎁", title: "Local shop gift card", detail: "Choose a small thank-you for yourself.", points: 650 },
+  { id: "half-day", icon: "☀️", title: "Extra half-day leave", detail: "A little more time for what matters.", points: 1100 },
+  { id: "perk", icon: "✨", title: "Choose-your-own perk", detail: "Pick from this month's team perks.", points: 900 },
+];
+
+export const wellnessOptions = [
+  { name: "Mindfulness break", points: 20 },
+  { name: "Yoga or stretching", points: 15 },
+  { name: "Fresh-air walk", points: 30 },
+  { name: "Step-count goal", points: 30 },
+];
+
+export const quizOptions = [
+  { id: "listen", text: "Be specific, kind, and leave space to listen" },
+  { id: "fast", text: "Share it quickly, without asking questions" },
+  { id: "private", text: "Wait until the end of the year to mention it" },
 ];
 
 export const pollOptions = [
