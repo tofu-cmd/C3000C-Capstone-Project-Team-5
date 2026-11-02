@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 import Sidebar from "./components/Sidebar.jsx";
 import Overview from "./pages/Overview.jsx";
-import Challenges from "./pages/Challenges.jsx";
-import Recognition from "./pages/Recognition.jsx";
-import Learning from "./pages/Learning.jsx";
-import Wellness from "./pages/Wellness.jsx";
 import TeamFeed from "./pages/TeamFeed.jsx";
 import HrHub from "./pages/HrHub.jsx";
 import Insights from "./pages/Insights.jsx";
@@ -33,18 +29,8 @@ function App() {
   // Everything the user can earn or do. It lives here in App so that
   // every page can read it and the sidebar always shows the right points.
   const [points, setPoints] = useState(1420);
-  const [doneChallenges, setDoneChallenges] = useState([]); // list of ids
-  const [doneCourses, setDoneCourses] = useState([]); // list of ids
-  const [quizDone, setQuizDone] = useState(false);
-  const [quizCorrect, setQuizCorrect] = useState(false);
-  const [kudos, setKudos] = useState([]);
   const [posts, setPosts] = useState(startingPosts);
-  const [wellnessLogs, setWellnessLogs] = useState([]);
-  const [fitnessConnected, setFitnessConnected] = useState(false);
   const [pollAnswer, setPollAnswer] = useState("");
-  const [teamJoined, setTeamJoined] = useState(false);
-  const [teamThanked, setTeamThanked] = useState(false);
-  const [teamProgress, setTeamProgress] = useState(14);
 
   // Runs whenever the theme changes
   useEffect(() => {
@@ -72,47 +58,9 @@ function App() {
     setPoints(points + amount);
   }
 
-  function completeChallenge(challenge) {
-    setDoneChallenges([...doneChallenges, challenge.id]);
-    addPoints(challenge.points);
-  }
-
-  function completeCourse(course) {
-    setDoneCourses([...doneCourses, course.id]);
-    addPoints(course.points);
-  }
-
-  function finishQuiz(correct) {
-    setQuizDone(true);
-    setQuizCorrect(correct);
-    addPoints(30);
-  }
-
-  function sendKudos(to, note) {
-    setKudos([...kudos, { id: Date.now(), from: "Maya Lewis", to, note }]);
-  }
-
-  // Returns true if the reward was bought
-  function redeemReward(cost) {
-    if (points < cost) return false;
-    setPoints(points - cost);
-    return true;
-  }
-
-  function logWellness(activity, earned) {
-    setWellnessLogs([...wellnessLogs, { activity, points: earned }]);
-    addPoints(earned);
-  }
-
   function answerPoll(answer) {
     setPollAnswer(answer);
     addPoints(25);
-  }
-
-  function addThankYou() {
-    setTeamThanked(true);
-    setTeamProgress(teamProgress + 1);
-    addPoints(10);
   }
 
   function showPage() {
@@ -120,55 +68,7 @@ function App() {
       return (
         <Overview
           points={points}
-          doneChallenges={doneChallenges}
-          doneCourses={doneCourses}
-          quizCorrect={quizCorrect}
-          wellnessLogs={wellnessLogs}
-          kudos={kudos}
           setPage={setPage}
-        />
-      );
-    }
-    if (page === "challenges") {
-      return (
-        <Challenges
-          doneChallenges={doneChallenges}
-          completeChallenge={completeChallenge}
-          teamJoined={teamJoined}
-          setTeamJoined={setTeamJoined}
-          teamThanked={teamThanked}
-          teamProgress={teamProgress}
-          addThankYou={addThankYou}
-        />
-      );
-    }
-    if (page === "recognition") {
-      return (
-        <Recognition
-          points={points}
-          kudos={kudos}
-          sendKudos={sendKudos}
-          redeemReward={redeemReward}
-        />
-      );
-    }
-    if (page === "learning") {
-      return (
-        <Learning
-          doneCourses={doneCourses}
-          completeCourse={completeCourse}
-          quizDone={quizDone}
-          finishQuiz={finishQuiz}
-        />
-      );
-    }
-    if (page === "wellness") {
-      return (
-        <Wellness
-          wellnessLogs={wellnessLogs}
-          logWellness={logWellness}
-          fitnessConnected={fitnessConnected}
-          setFitnessConnected={setFitnessConnected}
         />
       );
     }
@@ -201,7 +101,6 @@ function App() {
         page={page}
         setPage={setPage}
         points={points}
-        doneChallenges={doneChallenges.length}
         theme={theme}
         toggleTheme={toggleTheme}
       />
