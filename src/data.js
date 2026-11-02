@@ -4,8 +4,7 @@ export const pages = [
   { id: "overview", icon: "🏠", label: "Overview" },
   { id: "challenges", icon: "🎯", label: "Challenges" },
   { id: "recognition", icon: "🏅", label: "Recognition & rewards" },
-  { id: "learning", icon: "📖", label: "Learning" },
-  { id: "wellness", icon: "💚", label: "Wellness" },
+  { id: "learning", icon: "📖", label: "Learning & Development" },
   { id: "feed", icon: "💬", label: "Team feed" },
   { id: "hr", icon: "💼", label: "HR self-service" },
   { id: "insights", icon: "📊", label: "Insights" },
@@ -25,13 +24,9 @@ export const headings = {
     subtitle: "Notice it. Say it. Help it grow.",
   },
   learning: {
-    title: "Keep growing your skills",
-    subtitle: "A few minutes of curiosity can take you a long way.",
-  },
-  wellness: {
-    title: "Make room for wellbeing",
-    subtitle: "Find a rhythm that feels right for you.",
-  },
+  title: "Learning & Development",
+  subtitle: "Grow your skills, complete training, and earn points.",
+},
   feed: {
     title: "Good things happen together",
     subtitle: "Share a milestone, a thank-you, or a bright spot.",
@@ -74,13 +69,6 @@ export const rewards = [
   { id: "gift-card", icon: "🎁", title: "Local shop gift card", detail: "Choose a small thank-you for yourself.", points: 650 },
   { id: "half-day", icon: "☀️", title: "Extra half-day leave", detail: "A little more time for what matters.", points: 1100 },
   { id: "perk", icon: "✨", title: "Choose-your-own perk", detail: "Pick from this month's team perks.", points: 900 },
-];
-
-export const wellnessOptions = [
-  { name: "Mindfulness break", points: 20 },
-  { name: "Yoga or stretching", points: 15 },
-  { name: "Fresh-air walk", points: 30 },
-  { name: "Step-count goal", points: 30 },
 ];
 
 export const quizOptions = [

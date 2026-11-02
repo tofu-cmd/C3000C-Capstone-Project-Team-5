@@ -4,7 +4,6 @@ import Overview from "./pages/Overview.jsx";
 import Challenges from "./pages/Challenges.jsx";
 import Recognition from "./pages/Recognition.jsx";
 import Learning from "./pages/Learning.jsx";
-import Wellness from "./pages/Wellness.jsx";
 import TeamFeed from "./pages/TeamFeed.jsx";
 import HrHub from "./pages/HrHub.jsx";
 import Insights from "./pages/Insights.jsx";
@@ -39,8 +38,6 @@ function App() {
   const [quizCorrect, setQuizCorrect] = useState(false);
   const [kudos, setKudos] = useState([]);
   const [posts, setPosts] = useState(startingPosts);
-  const [wellnessLogs, setWellnessLogs] = useState([]);
-  const [fitnessConnected, setFitnessConnected] = useState(false);
   const [pollAnswer, setPollAnswer] = useState("");
   const [teamJoined, setTeamJoined] = useState(false);
   const [teamThanked, setTeamThanked] = useState(false);
@@ -99,11 +96,6 @@ function App() {
     return true;
   }
 
-  function logWellness(activity, earned) {
-    setWellnessLogs([...wellnessLogs, { activity, points: earned }]);
-    addPoints(earned);
-  }
-
   function answerPoll(answer) {
     setPollAnswer(answer);
     addPoints(25);
@@ -123,7 +115,6 @@ function App() {
           doneChallenges={doneChallenges}
           doneCourses={doneCourses}
           quizCorrect={quizCorrect}
-          wellnessLogs={wellnessLogs}
           kudos={kudos}
           setPage={setPage}
         />
@@ -159,16 +150,6 @@ function App() {
           completeCourse={completeCourse}
           quizDone={quizDone}
           finishQuiz={finishQuiz}
-        />
-      );
-    }
-    if (page === "wellness") {
-      return (
-        <Wellness
-          wellnessLogs={wellnessLogs}
-          logWellness={logWellness}
-          fitnessConnected={fitnessConnected}
-          setFitnessConnected={setFitnessConnected}
         />
       );
     }

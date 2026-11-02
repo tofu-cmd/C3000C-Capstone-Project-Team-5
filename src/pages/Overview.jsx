@@ -9,7 +9,6 @@ function Overview({
   doneChallenges,
   doneCourses,
   quizCorrect,
-  wellnessLogs,
   kudos,
   setPage,
 }) {
@@ -49,12 +48,6 @@ function Overview({
           title="Challenges done"
           value={doneChallenges.length}
           detail={pending + " ready to try"}
-        />
-        <StatCard
-          icon="💚"
-          title="Wellness streak"
-          value={wellnessLogs.length + 4 + " days"}
-          detail="A lovely little rhythm"
         />
       </div>
 
@@ -134,19 +127,6 @@ function Overview({
                 <small>Feedback · 25 points</small>
               </div>
               <button className="small-button" onClick={() => setPage("hr")}>
-                →
-              </button>
-            </div>
-            <div className="list-row">
-              <span className="emoji">👟</span>
-              <div className="grow">
-                <strong>Take a mindful moment</strong>
-                <small>Wellness · 20 points</small>
-              </div>
-              <button
-                className="small-button"
-                onClick={() => setPage("wellness")}
-              >
                 →
               </button>
             </div>
