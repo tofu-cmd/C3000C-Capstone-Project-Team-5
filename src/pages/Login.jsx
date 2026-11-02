@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // A pretend login screen. Any password works because this is only a demo.
-function Login({ onLogin }) {
+function Login({ onLogin, onShowRegister }) {
   const [email, setEmail] = useState("maya.lewis@bloom.example");
   const [password, setPassword] = useState("");
 
@@ -28,6 +28,12 @@ function Login({ onLogin }) {
           <input type="password" value={password} onChange={event => setPassword(event.target.value)} />
         </label>
         <button className="button" type="submit">Log in</button>
+        <p className="note">
+          Don't have an account?{" "}
+          <button type="button" className="link-button" onClick={onShowRegister}>
+            Register
+          </button>
+        </p>
       </form>
     </div>
   );

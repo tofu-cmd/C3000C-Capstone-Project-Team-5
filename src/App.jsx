@@ -10,6 +10,7 @@ import HrHub from "./pages/HrHub.jsx";
 import Insights from "./pages/Insights.jsx";
 import Login from "./pages/Login.jsx";
 import UserMenu from "./components/UserMenu.jsx";
+import Register from "./pages/Registration.jsx";
 import { headings, startingPosts } from "./data.js";
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(
     localStorage.getItem("loggedIn") !== "no"
   );
+
+  // When logged out: show the register screen instead of login?
+  const [showRegister, setShowRegister] = useState(false);
 
   // Light or dark theme (remembered in the browser)
   const [theme, setTheme] = useState(
@@ -59,6 +63,7 @@ function App() {
 
   function logout() {
     setLoggedIn(false);
+    setShowRegister(false);
     setPage("overview");
     localStorage.setItem("loggedIn", "no");
   }
@@ -177,7 +182,17 @@ function App() {
   }
 
   if (!loggedIn) {
-    return <Login onLogin={login} />;
+    if (showRegister) {
+      return (
+        <Register
+          onRegister={login}
+          onShowLogin={() => setShowRegister(false)}
+        />
+      );
+    }
+    return (
+      <Login onLogin={login} onShowRegister={() => setShowRegister(true)} />
+    );
   }
 
   return (

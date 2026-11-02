@@ -14,4 +14,7 @@ function UserMenu({ name, onLogout }) {
   );
 }
 
+function onLogout() {
+  // Implementation for logout functionality
+}
 export default UserMenu;
